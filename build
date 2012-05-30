@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+import os
+import re
+from subprocess import call
+
+header = open('./header.tex', 'r');
+footer = open('./footer.tex', 'r');
+book = open('./Programming In General.tex', 'w');
+
+book.write(header.read());
+header.close();
+
+dirs = [x[0] for x in os.walk('.')][1:]
+
+for d in dirs:
+    chapter = re.sub('\d+\s-\s', '', d[2:])
+    book.write('\r\n\chapter{' + chapter + '}\r\n')
+    if os.path.exists(d + '/' + chapter + '.tex'):
+        book.write('\input{"' + d + '/' + chapter + '"}\r\n')
+    files = os.listdir(d)
+    for f in filter(lambda f: re.search('^\d+.\d+\s-\s',f), files):
+        section = re.sub('\d+.\d+\s-\s|.tex', '', f)
+        book.write('\r\n\section{' + section + '}\r\n')
+        book.write('\input{"' + d + '/' + f.replace('.tex', '') + '"}\r\n')
+
+
+book.write(footer.read());
+footer.close();
+
+book.close();
+
+
+
+call(['latex', './Programming In General.tex'])
+call(['pdflatex', './Programming In General.tex'])
