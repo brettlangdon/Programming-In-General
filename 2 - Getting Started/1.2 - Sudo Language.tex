@@ -1,0 +1,132 @@
+For the code examples presented in this resource I am going to be using a sudo language. The concept behind a sudo language
+is to be able to present programming concepts in a language agnostic form so that the concepts can be translated to your
+language of choice.
+\newline
+\\
+So it is great that you have chosen lanauge X to use throughout this book, but how is the sudo lanauge going to help you out?
+Well, lets walk through a few examples and I will show you how the examples get translated to a few various languages.
+
+\subsection{Example 1}
+\begin{lstlisting}
+name = "Brett"
+if name == "Brett"
+    print "Name Is Brett"
+else
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+In this example we have a variable called "name" that we are assigning the value of "Brett". Then we are checking if the
+variable name is equal to the value "Brett", if so then we want to print "Name Is Brett" otherwise if it does not then we want to 
+print "Name Is Not Brett". As far as programming goes this is a fairly simple process but lets try and translate this example
+to a few different languages to see how it is done.
+
+PHP:
+\begin{lstlisting}
+<?php
+$name = 'Brett';
+if( $name === 'Brett' ){
+    echo 'Name Is Brett';
+} else{
+    echo 'Name Is Not Brett';
+}
+\end{lstlisting}
+
+C:
+\begin{lstlisting}
+int main{
+    char* name = "Brett";
+    if( name == "Brett" ){
+        printf("Name Is Brett");
+    } else{
+        printf("Name Is Not Brett");
+    }
+    return 0;
+}
+\end{lstlisting}
+
+Python:
+\begin{lstlisting}
+name = "Brett"
+if name is "Brett":
+    print "Name Is Brett"
+else:
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+Node.JS:
+\begin{lstlisting}
+var name = "Brett";
+if( name == "Brett" ){
+    console.log("Name Is Brett");
+} else{
+    console.log("Name Is Not Brett");
+}
+\end{lstlisting}
+
+Java:
+\begin{lstlisting}
+class Example1{
+    public static void main( String[] args ){
+        String name = "Brett";
+        if( name.equals("Brett") ){
+            System.out.println("Name Is Brett");
+        } else{
+            System.out.println("Name Is Not Brett");
+        }
+    }
+}
+\end{lstlisting}
+
+Notice that all of the actual examples end up looking the same? That is the point of using the sudo language, so that we can
+discuss the core concepts for each example.
+
+\subsection{Example 2}
+Since we have seen a fairly simple example above, lets take a look at a more complicated example. Do not be afraid if it does not make
+too much sense right now, but try and notice the similarities between the sudo language and the actual code examples.
+
+\begin{lstlisting}
+class Person
+    private name
+    
+    function getName()
+        return this.name
+    
+    function setName( newName )
+        this.name = newName
+
+
+p = new Person()
+p.setName("Brett")
+
+
+if p.getName() == "Brett"
+    print "Name Is Brett"
+else
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+Ok, in this example we are using the concept of classes and objects. We are creating a new class called "Person" with a
+private property "name" and two methods "getName" and "setName". "getName" will return the value of the private property "name" and
+"setName" will take in a single parameter "newName" and set the private property "name"'s value to the value of "newName". Lastly we
+are going to create a variable called "p" and have it be equal to a new instance of a "Person", set that instances name to "Brett" then like 
+in the previous example we are going to get if the value of "p"'s private property "name" is equal to "Brett".
+\newline
+\\
+Like I mentioned before, this example might go over the head of some people as it introduces some more advanced topics, but hopefully it
+helps to understand how you can translate the sudo language.
+
+PHP:
+\begin{lstlisting}
+<?php
+class Person{
+    private $name;
+    
+    public function getName(){
+        return $this->name;
+    }
+    
+    public function setname( $newName ){
+        $this->name = $newName;
+    }
+}
+\end{lstlisting}
