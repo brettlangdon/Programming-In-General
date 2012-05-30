@@ -12,7 +12,7 @@ header.close();
 
 dirs = [x[0] for x in os.walk('.')][1:]
 
-for d in dirs:
+for d in filter(lambda d: not re.search('.git',d),dirs):
     chapter = re.sub('\d+\s-\s', '', d[2:])
     book.write('\r\n\chapter{' + chapter + '}\r\n')
     if os.path.exists(d + '/' + chapter + '.tex'):
