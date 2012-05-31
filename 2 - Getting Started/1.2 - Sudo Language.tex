@@ -3,7 +3,7 @@ is to be able to present programming concepts in a language agnostic form so tha
 language of choice.
 \newline
 \\
-So it is great that you have chosen lanauge X to use throughout this book, but how is the sudo lanauge going to help you out?
+So it is great that you have chosen lanauge X to use throughout this resource, but how is the sudo lanauge going to help you out?
 Well, lets walk through a few examples and I will show you how the examples get translated to a few various languages.
 
 \subsection{Example 1}
@@ -78,7 +78,8 @@ class Example1{
 \end{lstlisting}
 
 Notice that all of the actual examples end up looking the same? That is the point of using the sudo language, so that we can
-discuss the core concepts for each example.
+discuss the core concepts for each example. Also, notice the Python implementation, it is almost line for line, word for word
+identical to the sudo language example.
 
 \subsection{Example 2}
 Since we have seen a fairly simple example above, lets take a look at a more complicated example. Do not be afraid if it does not make
@@ -129,4 +130,87 @@ class Person{
         $this->name = $newName;
     }
 }
+
+$p = new Person();
+$p->setName('Brett');
+
+if( $p->getName() === 'Brett' ){
+    echo 'Name Is Brett';
+} else{
+    echo 'Name Is Not Brett';
+}
 \end{lstlisting}
+
+Java:
+\begin{lstlisting}
+class Person{
+    private String name;
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public void setName( String newName ){
+        this.name = newName;
+    }
+    
+    public static void main(String[] args){
+        Person p = new Person();
+        p.setName("Brett");
+        
+        if( p.getName() == "Brett" ){
+            System.out.println("Name Is Brett");
+        } else{
+            System.out.println("Name Is Not Brett");
+        }
+    }
+
+}
+\end{lstlisting}
+
+Node.Js:
+\begin{lstlisting}
+var Person = function(){}
+Person.prototype.getName = function(){
+    return this.name;
+}
+Person.prototype.setName = function( newName ){
+    this.name = newName;
+}
+
+var p = new Person();
+p.setName("Brett");
+
+if( p.getName() == "Brett" ){
+    console.log("Name Is Brett");
+} else{
+    console.log("Name Is Not Brett");
+}
+\end{lstlisting}
+
+Python:
+\begin{lstlisting}
+class Person:
+    def getname( self ):
+        return self.name
+    def setName( self, newName ):
+        self.name = newName
+
+p = Person()
+p.setName("Brett");
+
+if p.getName() is "Brett":
+    print "Name Is Brett"
+else:
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+This example does a better job of showing how each language can tackle the concepts in a different manner but the core concepts
+laid out by the sudo language can still be extrapolated and translated to each individual programming language. As long as the
+language supports the concepts. As you may notice that I left out the implementation of C in this example. It is because C 
+does not support the use of classes and objects, yes there are ways of completing this example in C using structs but that
+is something that you should learn on your own.
+\newline
+\\
+
+So now you have seen a few examples, hopefully enough to give you an idea of how the examples in this resource will be presented.
