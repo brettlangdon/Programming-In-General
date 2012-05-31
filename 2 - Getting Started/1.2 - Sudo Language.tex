@@ -20,7 +20,7 @@ variable name is equal to the value "Brett", if so then we want to print "Name I
 print "Name Is Not Brett". As far as programming goes this is a fairly simple process but lets try and translate this example
 to a few different languages to see how it is done.
 
-PHP:
+{\bf PHP:}
 \begin{lstlisting}
 <?php
 $name = 'Brett';
@@ -31,7 +31,7 @@ if( $name === 'Brett' ){
 }
 \end{lstlisting}
 
-C:
+{\bf C:}
 \begin{lstlisting}
 int main{
     char* name = "Brett";
@@ -44,7 +44,7 @@ int main{
 }
 \end{lstlisting}
 
-Python:
+{\bf Python:}
 \begin{lstlisting}
 name = "Brett"
 if name is "Brett":
@@ -53,7 +53,7 @@ else:
     print "Name Is Not Brett"
 \end{lstlisting}
 
-Node.JS:
+{\bf Node.JS:}
 \begin{lstlisting}
 var name = "Brett";
 if( name == "Brett" ){
@@ -63,7 +63,7 @@ if( name == "Brett" ){
 }
 \end{lstlisting}
 
-Java:
+{\bf Java:}
 \begin{lstlisting}
 class Example1{
     public static void main( String[] args ){
@@ -116,7 +116,7 @@ in the previous example we are going to get if the value of "p"'s private proper
 Like I mentioned before, this example might go over the head of some people as it introduces some more advanced topics, but hopefully it
 helps to understand how you can translate the sudo language.
 
-PHP:
+{\bf PHP:}
 \begin{lstlisting}
 <?php
 class Person{
@@ -141,7 +141,7 @@ if( $p->getName() === 'Brett' ){
 }
 \end{lstlisting}
 
-Java:
+{\bf Java:}
 \begin{lstlisting}
 class Person{
     private String name;
@@ -168,7 +168,7 @@ class Person{
 }
 \end{lstlisting}
 
-Node.Js:
+{\bf Node.JS:}
 \begin{lstlisting}
 var Person = function(){}
 Person.prototype.getName = function(){
@@ -188,7 +188,7 @@ if( p.getName() == "Brett" ){
 }
 \end{lstlisting}
 
-Python:
+{\bf Python:}
 \begin{lstlisting}
 class Person:
     def getname( self ):
