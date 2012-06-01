@@ -1,13 +1,93 @@
 \documentclass[10pt,a4paper,titlepage]{book}
+\usepackage[width=7in, height=9.5in,papersize={8.5in,11in}]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{moreverb}
 \usepackage{listings}
+\usepackage{layout}
+\usepackage{fancyhdr}
+\usepackage{color}
+
+
 \author{Brett Langdon}
 \title{Programming In General}
-\lstset{language=php,numbers=left,stepnumber=1}
+
+\pagestyle{fancy}
+\voffset=0.25in
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+
+\definecolor{lstkeyword}{rgb}{.2,.2,.7}
+\definecolor{lstcomment}{rgb}{.7,.7,.7}
+\definecolor{lstidentifier}{rgb}{0,0,0}
+\definecolor{lststring}{rgb}{.4,.4,.4}
+
+
+\lstset{
+    numbers=left,
+    stepnumber=1,
+    numberstyle=\footnotesize,
+    frame=single,
+    showspaces=false,
+    showstringspaces=false,
+    basicstyle=\ttfamily,
+    linewidth=6.5in,
+    xleftmargin=0.5in,
+    keywordstyle=\bfseries\color{lstkeyword},
+    commentstyle=\itshape\color{lstcomment},
+    identifierstyle=\color{lstidentifier},
+    stringstyle=\color{lststring},
+    morekeywords={class,public,private,protected,$this,return,this,self,if,else,function,print},
+    morestring=[b]',
+    morestring=[b]",
+    morecomment=[s]{/*}{*/},
+    comment=[l]{//}
+}
+
+
+\lstdefinelanguage{javascript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinelanguage{php}{
+    keywords={$this,class,public,private,protected,return,new,null,catch,try,switch,if,else,while,do,case,break,continue,true,false,function,boolean,throw,implements,inhrits,echo,print}
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{3 in}
+
+\HRule \\[0.4cm]
+{\huge \bfseries Programming In General}
+\HRule \\[0.4cm]
+
+\emph{Author:}\\
+Brett \textsc{Langdon}
+
+\vfill
+
+{\large \today}
+
+\end{center}
+\end{titlepage}
+
 \tableofcontents

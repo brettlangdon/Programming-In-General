@@ -17,6 +17,7 @@ for d in filter(lambda d: not re.search('.git',d),dirs):
     book.write('\r\n\chapter{' + chapter + '}\r\n')
     if os.path.exists(d + '/' + chapter + '.tex'):
         book.write('\input{"' + d + '/' + chapter + '"}\r\n')
+        book.write('\\vfill\r\n\pagebreak')
     files = os.listdir(d)
     for f in filter(lambda f: re.search('^\d+.\d+\s-\s',f), files):
         section = re.sub('\d+.\d+\s-\s|.tex', '', f)

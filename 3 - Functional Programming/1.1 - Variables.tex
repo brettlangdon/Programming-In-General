@@ -1,53 +1,30 @@
-For starters we are going to cover some basic usage of variables. Variables are used to store values to be read and manipulated.
-For example we can create a variable named "name" and store the value of the string "Brett" in it.
-\begin{lstlisting}
-name = "Brett"
-\end{lstlisting}
-
-Fairly simple to start with.
-\newline
-\\
-
-So here we are storing a string into a variable but what about other types of data? Each programming language supports different data types
-but for the most part they all support numbers, usaully various types, strings as well as booleans (true or false).So, we can store these
-different data types in variables as well.
-
-\begin{lstlisting}
-name = "Brett"
-number = 10
-boolean = false
-\end{lstlisting}
-
-Great, we can store values into a variable to use, but what do you mean use them? Well we can either use the variable names to access
-the values that we stored in them or we can manipulate the values stored in variables.
-
-\begin{lstlisting}
-name = "Brett"
-print name
-\end{lstlisting}
-
-Here we are storing the string "Brett" into the variable "name" and then printing the value stored in name. Here we are showing that
-we can access the original string value "Brett" from the variable "name".
+Variables are used to represent values by name and allow you to access the original value or manipulate the original value.
+For example we would store the integer value 10 into a variable named "a" which would then allow us to refer to "10" by
+using the name "a". 
 
 \begin{lstlisting}
 a = 10
-b = 5
-c = a + b
-print c
-\end{lstlisting}
-
-Ok, so here we are taking the number, or integer, value 10 and storing it into the variable "a", and the integer value 5 and storing it into
-the variable "b". Then we are using the mathematical opperator for addition (+) to store the addition of the values stored by
-"a" and "b" into the variable "c". Lastly, we are printing the value of "c" which if all works as we would like would print "15".
-\newline
-This is another example of showing how we can access the values stored within variables and act upon them. In this case we are accessing
-the values 10, stored in "a", and 5, stored in "b", and performing mathematical opperations on them.
-
-\begin{lstlisting}
-a = 10
-a = a + 5
 print a
 \end{lstlisting}
 
-In this example we are storing the integer value 10 into the variable "a" and then we are manipulating the value of a in such a way that we
-are adding the integer value 5 to it. Lastly, we are printing the final value of "a", which will be "15".
+In the above example the output would be "10" because the value 10 is stored in the variable "a" and then we access the original value
+10 when we print a.
+
+\subsection{Data Types}
+
+Programming languages support different types of data types or different types of values that they can represent in variables.
+Some programming languages use multiple different types of values but most of them support the basic types: string, integer
+and boolean (true or false).
+
+\begin{lstlisting}
+string = "Brett"
+integer = 10
+boolean = false
+\end{lstlisting}
+
+Please keep in mind that each programming language supports different data types and you should research those types to better
+understand variables in that language.
+
+\subsection{Operations}
+
+\subsection{Conclusion}

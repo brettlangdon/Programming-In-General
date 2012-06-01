@@ -1,13 +1,13 @@
 For the code examples presented in this resource I am going to be using a sudo language. The concept behind a sudo language
 is to be able to present programming concepts in a language agnostic form so that the concepts can be translated to your
 language of choice.
-\newline
-\\
+\par
+
 So it is great that you have chosen lanauge X to use throughout this resource, but how is the sudo lanauge going to help you out?
 Well, lets walk through a few examples and I will show you how the examples get translated to a few various languages.
 
 \subsection{Example 1}
-\begin{lstlisting}
+\begin{lstlisting}[caption={Example 1 - Sudo Code}]
 name = "Brett"
 if name == "Brett"
     print "Name Is Brett"
@@ -20,8 +20,7 @@ variable name is equal to the value "Brett", if so then we want to print "Name I
 print "Name Is Not Brett". As far as programming goes this is a fairly simple process but lets try and translate this example
 to a few different languages to see how it is done.
 
-{\bf PHP:}
-\begin{lstlisting}
+\begin{lstlisting}[language=php,caption={Example 1 - PHP}]
 <?php
 $name = 'Brett';
 if( $name === 'Brett' ){
@@ -31,8 +30,7 @@ if( $name === 'Brett' ){
 }
 \end{lstlisting}
 
-{\bf C:}
-\begin{lstlisting}
+\begin{lstlisting}[language=c,caption={Example 1 - C}]
 int main{
     char* name = "Brett";
     if( name == "Brett" ){
@@ -44,8 +42,7 @@ int main{
 }
 \end{lstlisting}
 
-{\bf Python:}
-\begin{lstlisting}
+\begin{lstlisting}[language=python,caption={Example 1 - Python}]
 name = "Brett"
 if name is "Brett":
     print "Name Is Brett"
@@ -53,8 +50,7 @@ else:
     print "Name Is Not Brett"
 \end{lstlisting}
 
-{\bf Node.JS:}
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Example 1 - Node.JS}]
 var name = "Brett";
 if( name == "Brett" ){
     console.log("Name Is Brett");
@@ -63,8 +59,7 @@ if( name == "Brett" ){
 }
 \end{lstlisting}
 
-{\bf Java:}
-\begin{lstlisting}
+\begin{lstlisting}[language=java,caption={Example 1 - Java}]
 class Example1{
     public static void main( String[] args ){
         String name = "Brett";
@@ -85,7 +80,7 @@ identical to the sudo language example.
 Since we have seen a fairly simple example above, lets take a look at a more complicated example. Do not be afraid if it does not make
 too much sense right now, but try and notice the similarities between the sudo language and the actual code examples.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Example 2 - Sudo Code}]
 class Person
     private name
     
@@ -111,13 +106,12 @@ private property "name" and two methods "getName" and "setName". "getName" will 
 "setName" will take in a single parameter "newName" and set the private property "name"'s value to the value of "newName". Lastly we
 are going to create a variable called "p" and have it be equal to a new instance of a "Person", set that instances name to "Brett" then like 
 in the previous example we are going to get if the value of "p"'s private property "name" is equal to "Brett".
-\newline
-\\
+\par
+
 Like I mentioned before, this example might go over the head of some people as it introduces some more advanced topics, but hopefully it
 helps to understand how you can translate the sudo language.
 
-{\bf PHP:}
-\begin{lstlisting}
+\begin{lstlisting}[language=php,caption={Example 2 - PHP}]
 <?php
 class Person{
     private $name;
@@ -141,8 +135,7 @@ if( $p->getName() === 'Brett' ){
 }
 \end{lstlisting}
 
-{\bf Java:}
-\begin{lstlisting}
+\begin{lstlisting}[language=java,caption={Eample 2 - Java}]
 class Person{
     private String name;
     
@@ -168,8 +161,7 @@ class Person{
 }
 \end{lstlisting}
 
-{\bf Node.JS:}
-\begin{lstlisting}
+\begin{lstlisting}[language=javascript,caption={Example 2 - Node.JS}]
 var Person = function(){}
 Person.prototype.getName = function(){
     return this.name;
@@ -188,8 +180,7 @@ if( p.getName() == "Brett" ){
 }
 \end{lstlisting}
 
-{\bf Python:}
-\begin{lstlisting}
+\begin{lstlisting}[language=python,caption={Example 2 - Python}]
 class Person:
     def getname( self ):
         return self.name
@@ -210,7 +201,6 @@ laid out by the sudo language can still be extrapolated and translated to each i
 language supports the concepts. As you may notice that I left out the implementation of C in this example. It is because C 
 does not support the use of classes and objects, yes there are ways of completing this example in C using structs but that
 is something that you should learn on your own.
-\newline
-\\
+\par
 
 So now you have seen a few examples, hopefully enough to give you an idea of how the examples in this resource will be presented.
