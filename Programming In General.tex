@@ -10,7 +10,6 @@
 \usepackage{fancyhdr}
 \usepackage{color}
 
-
 \author{Brett Langdon}
 \title{Programming In General}
 
@@ -18,7 +17,24 @@
 \voffset=0.25in
 
 
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumii.}
+
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+
+
+\definecolor{pigChapter}{rgb}{.1,.1,.4}
+\definecolor{pigVar}{rgb}{.2,.2,.2}
+\definecolor{pigVal}{rgb}{.2,.4,.7}
+\definecolor{pigOut}{rgb}{.6,.6,.2}
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\pigChapter}[1]{{\color{pigChapter}\textit{#1}}}
+\newcommand{\pigVar}[1]{{\color{pigVar}\textit{\textbf{#1}}}}
+\newcommand{\pigVal}[1]{{\color{pigVal}\textbf{#1}}}
+\newcommand{\pigOut}[1]{{\color{pigOut}\textbf{#1}}}
+
 
 
 
@@ -109,11 +125,11 @@ Brett \textsc{Langdon}
 \section{Choosing A Programming Language}
 \input{"./2 - Getting Started/1.1 - Choosing A Programming Language"}
 
-\section{Sudo Language}
-\input{"./2 - Getting Started/1.2 - Sudo Language"}
-
 \section{How To Read This Resource}
-\input{"./2 - Getting Started/1.3 - How To Read This Resource"}
+\input{"./2 - Getting Started/1.2 - How To Read This Resource"}
+
+\section{Sudo Language}
+\input{"./2 - Getting Started/1.3 - Sudo Language"}
 
 \chapter{Functional Programming}
 \input{"./3 - Functional Programming/Functional Programming"}

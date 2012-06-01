@@ -1,0 +1,269 @@
+For the code examples presented in this resource I am going to be using a sudo language.
+The concept behind a sudo language is to be able to present programming concepts in a
+language agnostic form so that the concepts can be translated to your language of choice.
+\par
+
+So it is great that you have chosen lanauge X to use throughout this resource, but how is the sudo lanauge going to help you out?
+Well, lets look at two examples and I will show their implementation in a few different languages.
+Hopefully this will help you be able to understand how the language should be tanslates (especially if your language of choice
+is one that I use).
+
+\subsection{Example 1}
+
+\begin{lstlisting}[caption={Example 1 - Sudo Code}]
+name = "Brett"
+if name == "Brett"
+    print "Name Is Brett"
+else
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+For this example lets break it down line by line to make sure we know exactly what is going on.
+
+\begin{enumerate}
+    \item {Store the value \pigVal{"Brett"} into the variable \pigVar{name}}
+    \item {Check if the variable \pigVar{name} is equal to the value \pigVal{"Brett"}}
+    \begin{enumerate}
+        \setcounter{enumii}{2}
+        \item {Print \pigOut{"Name Is Brett"} to the console}
+    \end{enumerate}
+    \setcounter{enumi}{3}
+    \item {Otherwise}
+    \begin{enumerate}
+        \setcounter{enumii}{4}
+        \item {Print \pigOut{"Name Is Not Brett"} to the console}
+    \end{enumerate}
+\end{enumerate}
+
+As far as programming goes this is a fairly simple process but lets try and translate this example to a
+few different languages to see how it is done.
+
+\begin{lstlisting}[language=php,caption={Example 1 - PHP}]
+<?php
+$name = 'Brett';
+if( $name === 'Brett' ){
+    echo 'Name Is Brett';
+} else{
+    echo 'Name Is Not Brett';
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=c,caption={Example 1 - C}]
+int main{
+    char* name = "Brett";
+    if( name == "Brett" ){
+        printf("Name Is Brett");
+    } else{
+        printf("Name Is Not Brett");
+    }
+    return 0;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=python,caption={Example 1 - Python}]
+name = "Brett"
+if name is "Brett":
+    print "Name Is Brett"
+else:
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+\begin{lstlisting}[language=javascript,caption={Example 1 - Node.JS}]
+var name = "Brett";
+if( name == "Brett" ){
+    console.log("Name Is Brett");
+} else{
+    console.log("Name Is Not Brett");
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=java,caption={Example 1 - Java}]
+class Example1{
+    public static void main( String[] args ){
+        String name = "Brett";
+        if( name.equals("Brett") ){
+            System.out.println("Name Is Brett");
+        } else{
+            System.out.println("Name Is Not Brett");
+        }
+    }
+}
+\end{lstlisting}
+
+Notice that all of the actual examples end up looking the same?
+That is the point of using the sudo language, so that we can discuss the core concepts of the lesson
+at hand and then those concepts can be directly applied to any language of choice.
+\par
+
+Also, notice the Python implementation, it is almost line for line, word for word identical to the sudo language example.
+
+\subsection{Example 2}
+Since we have seen a fairly simple example above, lets take a look at a more complicated example.
+Do not be afraid if it does not make too much sense right now, but try and notice the similarities
+between the sudo language and the actual code examples.
+
+
+
+\begin{lstlisting}[caption={Example 2 - Sudo Code}]
+class Person
+    private name
+    
+    function getName()
+        return this.name
+    
+    function setName( newName )
+        this.name = newName
+
+
+p = new Person()
+p.setName("Brett")
+
+
+if p.getName() == "Brett"
+    print "Name Is Brett"
+else
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+Just like the last one, lets break down this example line by line to fine out whats going on.
+
+\begin{enumerate}
+    \item {Create a new class called \pigVar{Person}}
+    \begin{enumerate}
+        \setcounter{enumii}{1}
+        \item {Create a private property \pigVar{name}}
+        \setcounter{enumii}{3}
+    
+        \item {Create a method called \pigVar{getName} that requires no parameters}
+        \begin{enumerate}
+            \setcounter{enumiii}{4}
+            \item {When the function is called return the class property \pigVar{name}}
+        \end{enumerate}
+        \setcounter{enumii}{6}
+    
+        \item {Create a method called \pigVar{setName} that takes a single parameter \pigVar{newName}}
+        \begin{enumerate}
+            \setcounter{enumiii}{7}
+            \item {When called set the class property \pigVar{name} equal to the parameter \pigVar{newName}}
+        \end{enumerate}
+    \end{enumerate}
+    
+    \setcounter{enumi}{10}
+    \item {Create a new \pigVar{Person} object and store it in the variable \pigVar{p}}
+    \item {Call \pigVar{p}'s \pigVar{setName} method passing in the value \pigVal{"Brett"}}
+    
+    \setcounter{enumi}{13}
+    \item {Call \pigVar{p}'s \pigVar{getName} method and check if the returned value is equal to \pigVal{"Brett"}}
+    \begin{enumerate}
+        \setcounter{enumii}{14}
+        \item {Print \pigOut{"Name Is Brett"} to the console}
+    \end{enumerate}
+    
+    \setcounter{enumi}{15}
+    \item {Otherwsie}
+    \begin{enumerate}
+        \setcounter{enumii}{16}
+        \item {Print \pigOut{"Name Is Not Brett"} to the console}
+    \end{enumerate}
+
+\end{enumerate}
+
+Do not worry if this example does not make sense to you, you will be able to understand it well before the end of this resource.
+\par
+
+Just like with Example 1, here are some translations of the example.
+
+\begin{lstlisting}[language=php,caption={Example 2 - PHP}]
+<?php
+class Person{
+    private $name;
+    
+    public function getName(){
+        return $this->name;
+    }
+    
+    public function setname( $newName ){
+        $this->name = $newName;
+    }
+}
+
+$p = new Person();
+$p->setName('Brett');
+
+if( $p->getName() === 'Brett' ){
+    echo 'Name Is Brett';
+} else{
+    echo 'Name Is Not Brett';
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=java,caption={Eample 2 - Java}]
+class Person{
+    private String name;
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public void setName( String newName ){
+        this.name = newName;
+    }
+    
+    public static void main(String[] args){
+        Person p = new Person();
+        p.setName("Brett");
+        
+        if( p.getName() == "Brett" ){
+            System.out.println("Name Is Brett");
+        } else{
+            System.out.println("Name Is Not Brett");
+        }
+    }
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=javascript,caption={Example 2 - Node.JS}]
+var Person = function(){}
+Person.prototype.getName = function(){
+    return this.name;
+}
+Person.prototype.setName = function( newName ){
+    this.name = newName;
+}
+
+var p = new Person();
+p.setName("Brett");
+
+if( p.getName() == "Brett" ){
+    console.log("Name Is Brett");
+} else{
+    console.log("Name Is Not Brett");
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=python,caption={Example 2 - Python}]
+class Person:
+    def getname( self ):
+        return self.name
+    def setName( self, newName ):
+        self.name = newName
+
+p = Person()
+p.setName("Brett");
+
+if p.getName() is "Brett":
+    print "Name Is Brett"
+else:
+    print "Name Is Not Brett"
+\end{lstlisting}
+
+This example does a better job of showing how each language can tackle the concepts in a different manner but the core concepts
+laid out by the sudo language can still be extrapolated and translated to each individual programming language.
+As long as the language supports the concepts.
+As you may notice that I left out the implementation of C in this example.
+It is because C does not support the use of classes and objects, yes there are ways of completing this example in C using structs but that
+is something that you should learn on your own.
+\par
+
+So now you have seen a few examples, hopefully enough to give you an idea of how the examples in this resource will be presented.
