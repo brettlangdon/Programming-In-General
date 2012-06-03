@@ -1,22 +1,38 @@
-Variables are used to represent values by name and allow you to access the original value or manipulate the original value.
-For example we would store the integer value 10 into a variable named "a" which would then allow us to refer to "10" by
-using the name "a". 
+Variables act as aliases to the values that we want them to represent and they allow us to access and manipulate the
+values that we assign to them.
+For example we could use the variable \pigVar{name} to represent the value \pigVal{"Brett Langdon"}.
+We do this with programming so that we can then access the value \pigVal{"Brett Langdon"} with a shorter representation, \pigVar{name}.
 
-\begin{lstlisting}
+
+\subsection{Declaration}
+
+To start with variables we need to declare their existence.
+By declaring a variable we are saying to the program, here is our alias and here is the value that we want it to represent.
+
+\begin{lstlisting}[caption={Variable Declaration}]
 a = 10
 print a
 \end{lstlisting}
 
-In the above example the output would be "10" because the value 10 is stored in the variable "a" and then we access the original value
-10 when we print a.
+In the above example we are saying that we want to store the integer value \pigVal{10} into the variable \pigVar{a}.
+We can then use the variable \pigVar{a} to access the value \pigVal{10}.
+This program will output \pigOut{10} rather than \pigOut{a}.
+\par
+
+When we declare variables we are telling the programming language to allocate some space in your computers memory
+in order to store the value that you need it to.
+The amount of space needed to store each variable depends based on your specific language being used and which data
+type is being used to store the value.
+
+
 
 \subsection{Data Types}
 
 Programming languages support different types of data types or different types of values that they can represent in variables.
-Some programming languages use multiple different types of values but most of them support the basic types: string, integer
+Some programming languages use multiple different types of values but most of them support the basic types: string, integer (multiple kinds)
 and boolean (true or false).
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Data Types}]
 string = "Brett"
 integer = 10
 boolean = false
@@ -24,7 +40,11 @@ boolean = false
 
 Please keep in mind that each programming language supports different data types and you should research those types to better
 understand variables in that language.
+As well some programming languages that are strickly typed which requires us to define the data type of the
+variable on declaration (unlike our sudo language).
+
 
 \subsection{Operations}
 
 \subsection{Conclusion}
+

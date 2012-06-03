@@ -23,6 +23,7 @@ for d in filter(lambda d: not re.search('.git',d),dirs):
         section = re.sub('\d+.\d+\s-\s|.tex', '', f)
         book.write('\r\n\section{' + section + '}\r\n')
         book.write('\input{"' + d + '/' + f.replace('.tex', '') + '"}\r\n')
+        book.write('\\vfill\r\n\pagebreak')
 
 
 book.write(footer.read());
