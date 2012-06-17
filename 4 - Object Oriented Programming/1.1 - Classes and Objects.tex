@@ -1,0 +1,122 @@
+Classes \emph{AND} Objects?
+What is the difference?
+\\
+
+Well I am glad you asked.
+A class is the definition or blueprint of an object.
+A class tells a program what to expect when coming across an object of the given class.
+What methods and properties to expect and even how to create and destroy objects.
+\par
+
+\emph{An object refers to a single instance of a class}
+\\
+Objects are refered to as being instances of a class.
+When you deine a class you are not creating a usable object that you can then call methods on
+or access properties of.
+You must then create an instance of that class (object) to be able to use it throughout your program.
+
+\subsection{Classes}
+Ok, so as I mentioned before we need to first define a class before we can start creating objects 
+and using them in our program.
+How do we do this?
+\par
+
+\begin{lstlisting}[caption={Class Definition}]
+class Person
+\end{lstlisting}
+
+Ok...?
+That seems too easy?
+\\
+Yes creating classes is usually fairly easy, just make sure to check how to create a class in your language of choice.
+
+\subsection{Objects}
+Ok, so we have our class definition from above, but how do we create an instance of this class so we can use it in our program?
+\par
+
+\begin{lstlisting}[caption={Object Declaration}]
+class Person
+
+p = new Person()
+\end{lstlisting}
+
+That is it.
+We can create an instance of our \pigVar{Person} class by using the \pigVar{new} keyword and calling \pigVar{Person()}.
+We can assign this instance to a variable, \pigVar{p}, and then use \pigVar{p} as an alias for our object throughout
+our program.
+\par
+
+Can we only have one object?
+No, you can have as many instances as your would like.
+\par
+
+\begin{lstlisting}[caption={Multiple Object Instances}]
+class Person
+
+p1 = new Person()
+p2 = new Person()
+p3 = new Person()
+\end{lstlisting}
+
+This then allows us to act on each of these instances as though they are separate.
+What does that mean?
+It means that if we were to modify a property of \pigVar{p1} then it would not have any effect on
+the same properties in \pigVar{p2} and \pigVar{p3}.
+
+\subsection{Properties}
+We are able to store variables inside of a class, these are called properties.
+To define a property we must define its name, access modifier and default value (if any).
+\par
+
+An access modifier can either be \emph{public}, \emph{private} or \emph{protected} (some languages do not support
+access modifiers).
+The \emph{public} modifier means that anyone who has access to the object can read and modify that property.
+The \emph{private} modifier means that no one outside of the object can read and modify the property, meaning that
+only the object itself has acess to the given property.
+The \emph{protected} modifier means that the given object and its children (we will get to this later in the chapter)
+will have access to read and modify the property. Lets look at an example.
+\par
+
+\begin{lstlisting}[caption={Class Properties}]
+class Person
+      public name
+      private age = 22
+
+p = new Person()
+p.name = ``Brett Langdon''
+
+p.age = 23 //this will cause an error
+
+\end{lstlisting}
+
+In this example we are creating a class with two properties, one is public (\pigVar{name}) and the other is private (\pigVar{age}).
+We then create a new instance of our class assigning it to the variable \pigVar{p}.
+Then we set the public property \pigVar{name} to \pigVal{``Brett Langdon''}.
+In line 8 there is the comment ``this will cause an error'' this is because the property \pigVar{age} is private and cannot be accessed
+from outside of the class.
+
+
+\subsection{Methods}
+So what is a Method?
+A method, simply put, is a function that belongs to a class.
+We use methods for the same reasons that we use functions for, to provide code reuse within our applications.
+Ok, so we know how to use functions, but how do we use them from within a class?
+\par
+
+\begin{lstlisting}[caption={Class Methods}]
+class Person
+      public name
+      private age
+      
+      function printName()
+               print this.name
+
+p = new Person()
+p.name = ``brett''
+p.printName()      
+\end{lstlisting}
+
+The output of this code would be \pigOut{brett}.
+
+\subsection{Special Methods}
+

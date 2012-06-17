@@ -9,6 +9,10 @@ the examples to which ever programming language they would like.
 
 Enjoy.
 
+## PDF
+
+I will always try to keep the lastest pdf version of the book provided in the repository, but if I forgot then you can build the pdf from source. 
+
 ## Build PDF
 
 To build from source you must have latex and python installed.
@@ -17,8 +21,8 @@ from the chapter subdirectories. Then it compiles the .pdf version from that
 
 ### Instructions:
 
-    git clone git@git.blangdon.com:programming_in_general.git
-    cd "programming in general"
+    git clone git://github.com/brettlangdon/programming-in-general.git
+    cd "programming-in-general"
     ./build
     
 Output will be:
