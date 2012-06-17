@@ -1,8 +1,38 @@
-
+Control statements are almost exactly as they sound, statements that control our programs.
+Well, they control the flow of our code.
+With control statements we can change the course of our programs based on various conditions.
 
 \subsection{If Statements}
+If stataments allow us to execute a given block of code based on a given condition.
+There are three main parts to an if statement \pigVal{if}, the \pigVal{conditional} and a \pigVal{code block}.
+
+
+\begin{lstlisting}[caption={If Statement}]
+name = ``brett''
+
+if( name == ``brett'' )
+    print ``Name is brett''
+\end{lstlisting}
+
+In this simple example the code block \pigOut{print ``Name is brett''} will only execute if the conditional \pigOut{name == ``brett''} is true.
+So the output of this code will be \pigOut{Name is brett}.
+
+\begin{lstlisting}[caption={False If Statement}]
+name = ``brett''
+
+if( name == ``john'' )
+    print ``Name is john''
+\end{lstlisting}
+
+In this example there will be no output, this is because the conditional \pigOut{name == ``john''} equates to false so the code block \pigOut{print ``Name is john''} will never get executed.
 
 \subsection{If-Else Statements}
+If statements are great and help us execute portions of our code based on the values of other variables, including based on input from users.
+But what if the condition of the if statement equates to false?
+With if statements we can append an else statement and a block of code to the end of an if statement that will get called if the if statement is false. 
+
+
+\subsection{Else If Statements}
 
 \subsection{For Loops}
 
