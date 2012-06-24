@@ -44,7 +44,73 @@ As well some programming languages that are strickly typed which requires us to 
 variable on declaration (unlike our sudo language).
 
 
-\subsection{Operations}
+\subsection{Operators}
+Operators are symbols we can use to manipulate variables.
+There are a few different types of operators, Arithmetic, Comparison and Logical operators.
+A quick list of operators include:
+
+\begin{enumerate}
+\item Addition +
+\item Subtraction -
+\item Multiplication *
+\item Division /
+\item Equals =
+\item Equal To ==
+\item Not Equal To !=
+\item Less Than <
+\item Greater Than > 
+\item Logical AND \&\&
+\end{enumerate}
+
+And there are more!
+\par
+
+Arithmetic operators include the mathematical symbols for addition (+), subtractions (-), division(/), multiplication(*) and equals(=).
+These operators are used to directly manipulate and change variables.
+For example we can add two variables together and then store that sum into a third variable.
+
+\begin{lstlisting}[caption={Addition Operator}]
+a = 10
+b = 5
+c = a + b
+
+print c
+\end{lstlisting}
+
+We store the value of \pigVal{10} into the variable \pigVar{a} and the value \pigVal{5} into the variable \pigVar{b}.
+Lastly, we store the sum of the variables \pigVar{a} and \pigVar{b} into the variable \pigVar{c}.
+The output of this program will be \pigOut{15}.
+\par
+
+Comparison operators are used to compare variables against other variables or values.
+The output of a comparison operator will be a boolean value (\pigVal{true} or \pigVal{false}).
+Some of the popular comparison operators are the equals to (==), not equals to (!=), less than (<), less than equal to (<=), greater than (>) and greater than equal to (>=).
+
+\begin{lstlisting}[caption={Comparison Operators}]
+name = ``Brett''
+a = 10
+b = 5
+c = a + b
+
+
+if name == ``Brett'':
+   print ``Name is Brett''
+
+if a > 10:
+   print ``A is greater than 10''
+
+if b >= 5:
+   print ``B is greater than or equal to 5''
+
+if c != 6:
+   print ``C is not 6''
+\end{lstlisting}
+
+In this example we are showing a few of the comparison operators.
+The output of this code will be:\\*
+\pigOut{Name is Brett\\*
+B is greater than or equal to 5\\*
+C is not 6}.
 
 \subsection{Conclusion}
 

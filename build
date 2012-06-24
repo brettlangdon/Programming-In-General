@@ -11,16 +11,19 @@ book.write(header.read());
 header.close();
 
 dirs = [x[0] for x in os.walk('.')][1:]
-
+dirs.sort()
 for d in filter(lambda d: not re.search('.git',d),dirs):
     chapter = re.sub('\d+\s-\s', '', d[2:])
+    print chapter
     book.write('\r\n\chapter{' + chapter + '}\r\n')
     if os.path.exists(d + '/' + chapter + '.tex'):
         book.write('\input{"' + d + '/' + chapter + '"}\r\n')
         book.write('\\vfill\r\n\pagebreak')
     files = os.listdir(d)
+    files.sort()
     for f in filter(lambda f: re.search('^\d+.\d+\s-\s',f), files):
         section = re.sub('\d+.\d+\s-\s|.tex', '', f)
+        print section
         book.write('\r\n\section{' + section + '}\r\n')
         book.write('\input{"' + d + '/' + f.replace('.tex', '') + '"}\r\n')
         book.write('\\vfill\r\n\pagebreak')
