@@ -31,8 +31,71 @@ If statements are great and help us execute portions of our code based on the va
 But what if the condition of the if statement equates to false?
 With if statements we can append an else statement and a block of code to the end of an if statement that will get called if the if statement is false. 
 
+\begin{lstlisting}[caption={If-Else Statement}]
+name = ``brett''
+
+if name == ``john'':
+    print ``Name is john''
+else:
+    print ``Name is not john''
+\end{lstlisting}
+
+The output of this program will be \pigOut{Name is not john}.
+When the program hits the if statement it evaluates the conditional \pigVar{name == ``john''} which evaluates to \pigVal{false}.
+Normally the program will continue on its way but since we provided an else statement that gets executed instead.
+An If-Else statement allows us to program ``if this then do this, otherwise do this.''
 
 \subsection{Else If Statements}
+Ok... wait, we just did If-Else statements not we are doing Else if statements?
+Yes, but they are different I swear!
+An If-Else statement allows us to execute code regardless of whether a conditional is true or false but with an else if statement we can provide multiple conditionals to an if statements.
+
+\begin{lstlisting}[caption={Else If Statement}]
+name = ``brett''
+
+if name == ``john'':
+    print ``Name is john''
+else if name == ``brett''
+    print ``Name is brett''
+\end{lstlisting}
+
+See? I told you it was different.
+So the output of this program is \pigOut{Name is brett} and this is because when the program gets to the if statement and evaluates it as false, it then continues down the list of conditionals.
+This works similar to how the else statement before worked, but this time we are giving the if statement multiple conditionals to check.
+We can expand this example by adding more else if statements.
+
+\begin{lstlisting}[caption={Else If Statement 2}]
+name = ``brett''
+
+if name == ``john'':
+    print ``Name is john''
+else if name == ``brett''
+    print ``Name is brett''
+else if name == ``barbara'':
+    print ``Name is barbara''
+\end{lstlisting}
+
+Just like the first example this program will ouput \pigOut{Name is brett}.
+This is because when the program gets to \pigVar{name == ``john''} it evaluates to false causing the program to skip to the next conditional \pigVar{name ==''brett''}, which then evaluates to true causing the code block given to execute.
+The last conditional \pigVar{name == ``barbara''} will then be skipped and the program will continue past the if statement.
+\par
+
+Now... what is we add an else statement to the end of this?
+With an if statement we could append an else statement to the end telling it what to do if the conditional failed.
+With an else if statement we can also append an else statement to the end telling it what to do if all of the conditionals fail.
+
+\begin{lstlisting}[caption={Else If Else Statement}]
+name = ``brett''
+
+if name == ``john'':
+    print ``Name is john''
+else if name == ``barbara'':
+    print ``Name is barbara''
+else:
+   print ``Well, I'm not sure what your name is''
+\end{lstlisting}
+
+This program will output \pigOut{Well, I'm not sure what your name is} because both conditionals, \pigVar{name == ``john''} and \pigVar{name == ``barbara''}, evaluate to false causing the if statement to continue on its merry way.
 
 \subsection{For Loops}
 

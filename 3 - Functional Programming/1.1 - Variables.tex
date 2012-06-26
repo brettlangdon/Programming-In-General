@@ -57,8 +57,8 @@ A quick list of operators include:
 \item Equals =
 \item Equal To ==
 \item Not Equal To !=
-\item Less Than <
-\item Greater Than > 
+\item Less Than $<$
+\item Greater Than $>$ 
 \item Logical AND \&\&
 \end{enumerate}
 
@@ -83,8 +83,8 @@ The output of this program will be \pigOut{15}.
 \par
 
 Comparison operators are used to compare variables against other variables or values.
-The output of a comparison operator will be a boolean value (\pigVal{true} or \pigVal{false}).
-Some of the popular comparison operators are the equals to (==), not equals to (!=), less than (<), less than equal to (<=), greater than (>) and greater than equal to (>=).
+The output of a comparison operator will be a boolean value (\pigVal{true} or \pigVal{false}), which means they can be used in a conditional statement or even stored into a variable.
+Some of the popular comparison operators are the equals to (==), not equals to (!=), less than ($<$), less than equal to ($<$=), greater than ($>$) and greater than equal to ($>$=).
 
 \begin{lstlisting}[caption={Comparison Operators}]
 name = ``Brett''
@@ -92,25 +92,63 @@ a = 10
 b = 5
 c = a + b
 
+print name == ``Brett''
 
-if name == ``Brett'':
-   print ``Name is Brett''
+print a > 10
 
-if a > 10:
-   print ``A is greater than 10''
+print b >= 5
 
-if b >= 5:
-   print ``B is greater than or equal to 5''
+isNotSix = c != 6
+print isNotSix
 
-if c != 6:
-   print ``C is not 6''
 \end{lstlisting}
 
 In this example we are showing a few of the comparison operators.
 The output of this code will be:\\*
-\pigOut{Name is Brett\\*
-B is greater than or equal to 5\\*
-C is not 6}.
+\pigOut{False\\*
+True\\*
+True}.
+\par
+
+Logical operators are used to evaluate multiple variables, comparisons or conditionals.
+The two most popularly used Logical operators are the Logical AND (\&\&) and the Logical OR ($\vert$$\vert$).
+An example of using Logical operators would be to construct a conditional statement based on multiple inputs.
+
+\begin{lstlisting}[caption={Logical AND Example}]
+name = ``Brett''
+age = 22
+
+print name == ``Brett'' && age == 22
+\end{lstlisting}
+
+The output of this code will be \pigOut{True}.
+With the Logical AND operator we are saying that our conditional statement is only true if both \pigVar{name} is equal to \pigVal{``Brett''} AND \pigVar{age} is equal to \pigVal{22}.
+If either side of the operator (\&\&) is false then the entire conditional is false.
+\par
+
+The other Logical operator is the OR operator and tells our conditional that one side or the other must be true in order for the entire conditional to be true.
+This means that either the left or right side can be false as long as the other side is true.
+
+\begin{lstlisting}[caption={Logical OR Example}]
+name = ``Brett''
+age = 23
+
+print name == ``Brett'' || age == 22
+\end{lstlisting}
+
+This program will output \pigOut{True} because eventhough \pigVar{age} is not \pigVal{22}, \pigVar{name} is \pigVal{``Brett''}.
+If we switched around the conditionals, put \pigVar{age == 22} on the left hand side of \pigVar{||}, then the program will have the same output; this is becuase with the Logical OR only one side needs to be true.
+\par
+
+One thing to remember when dealing with either of the Logical operators is that programming languages will evaluate the conditionals from left to right.
+For example, in the above ``Logical AND'' example, if \pigVar{name} were not equal to \pigVal{``Brett''} then the right hand side \pigVar{age == 22} would never even get to evaluate.
+For the second example using the Logical OR, if \pigVar{name == ``Brett''} were true (which in this case it was) then the right hand side would never get to evaluate.
+This is becuase with Logical OR's only one side needs to be true, if the left hand side is true then there is no need to even try the right hand side.
 
 \subsection{Conclusion}
+In this section we have covered the basics of variables, how they are declared, used and evaluated.
+Variables will be the building blocks from which we will continue through this book.
+It is very important that you are able to use variables in your prefered language as their use is exhausted in every following section and chapter.
+\par
 
+The next section will cover the use of Control Statements.
