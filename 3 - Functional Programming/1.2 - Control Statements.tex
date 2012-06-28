@@ -172,6 +172,82 @@ As you can see, we can also compare our number variable against number values.
 In this example we also have left out the default case, this case is optional, similar to the else statement.
 
 \subsection{For Loops}
+We have seen some statements that will help the direction of our code, but what about repeating code?
+Lets say that we need to manually determine what the square of a number is using multiplication (rather than the exponential operator \^).
+This can be expressed fairly easily.
+
+\begin{lstlisting}[caption={Square Without Loop}]
+num = 5
+
+newNum = num * num
+
+print newNum
+\end{lstlisting}
+
+Fairly easy enough and we know the output of this code will be \pigOut{25}.
+Now lets say we need to do this same thing but to the power of 5.
+
+\begin{lstlisting}[caption={Power of 5 Without Loop}]
+num = 5
+
+newNum = num * num * num * num * num
+
+print newNum
+\end{lstlisting}
+
+Ok, now this is starting to get obnoxious.
+Now what if we need it to the power of 100... I'm not programming that.
+This is where loops come in, in particular the For loop.
+The For loop is the perfect candidate when you need an action performed a set number of times.
+
+\begin{lstlisting}[caption={For Loop}]
+num = 5
+
+newNum = num
+
+for i = 0; i < 99; ++i:
+    newNum = newNum * num
+
+print newNum
+\end{lstlisting}
+
+So the output of this code should be, \pigOut{7.888609052210123e+69}.
+For loops can be odd to look at the first time so lets break it down part by part.
+A For loop is broken into 4 parts, the Initializer, the Condition, the Update and the Code Block.
+The Initializer, Condition and Update are all separated by semicolons.
+\par
+
+The Initializer, \pigVar{i = 0}, initializes some value that is going to be used throughout the loop, usually a counter; in this case \pigVar{i}.
+Why is \pigVar{i} set to \pigVal{0}?
+In computer programming we use a zero based counting system mainly out of tradition, but because of implementation choices made by language developers to base counting off of memory addressing offsets.
+So... we just do, get in the habit now of counting from 0, everyone else does it.
+\par
+
+The Condition gets checked for every iteration of the loop and if the condition evaluates to true then the loop continues and once again executes the Code Block.
+In this example \pigVar{i $<$ 99} is out Condition.
+Why 99, I thought we were going to 100?
+True, we are going to 100, but remember that we initially set \pigVar{newNum} to \pigVar{num} which is the same as \pigVar{num} to the first power.
+Ok, so why do we use \pigVar{i $<$ 99}? won't that take us to 98?
+Remember, we are using zero based counting, so 0 counts as ``1''.
+\par
+
+The Update is a statement that get executed after the Code Block and is used to update any variables we need before continuing.
+In this case we are using the ``pre-increment'' operator to increase the value of \pigVar{i}, our counter, by 1.
+We could have also used \pigVar{i += 1}, but \pigVar{++i} is just so elegant.
+\par
+
+Lastly, the Code Block get executed on every iteration of the loop.
+The general flow of a For loop is, Initialize any variables, check the Condition if it is true then execute the Code Block, execute the Update statement, re-check the Condition, if it is true then execute the Code Block again or else leave the For loop and continue with the program.
+\par
+
+For loops are great, they save not only time, but they save a lot of typing and a lot of code duplication.
+Lets say in out example above we wanted to raise 5 to the power of 50 rather than 100?
+It is simple enough to change 99 to 49 and call our job done, but if we had written out \pigVar{num * num} 50 times, then it would be a pain to try and update this code.
+\par
+
+One thing to look out for with For loops, or any loops, are infinite loops, meaning a loop whose Condition will always evaluate to true.
+Take the example above, if we were to change the Condition to \pigVar{i $>$= 0} then we would have an infinite loop because \pigVar{i} starts at 0 and is always increasing.
+The same would be true if we changed the Condition to \pigVar{true} or \pigVar{1==1} or any other conditional statement that will always be true.
 
 \subsection{While Loops}
 
