@@ -3,9 +3,8 @@ Well, they control the flow of our code.
 With control statements we can change the course of our programs based on various conditions.
 
 \subsection{If Statements}
-If stataments allow us to execute a given block of code based on a given condition.
+If statement allow us to execute a given block of code based on a given condition.
 There are three main parts to an if statement \pigVal{if}, the \pigVal{conditional} and a \pigVal{code block}.
-
 
 \begin{lstlisting}[caption={If Statement}]
 name = ``brett''
@@ -75,7 +74,7 @@ else if name == ``barbara'':
     print ``Name is barbara''
 \end{lstlisting}
 
-Just like the first example this program will ouput \pigOut{Name is brett}.
+Just like the first example this program will output \pigOut{Name is brett}.
 This is because when the program gets to \pigVar{name == ``john''} it evaluates to false causing the program to skip to the next conditional \pigVar{name ==''brett''}, which then evaluates to true causing the code block given to execute.
 The last conditional \pigVar{name == ``barbara''} will then be skipped and the program will continue past the if statement.
 \par
@@ -92,10 +91,85 @@ if name == ``john'':
 else if name == ``barbara'':
     print ``Name is barbara''
 else:
-   print ``Well, I'm not sure what your name is''
+   print ``Well, I`m not sure what your name is''
 \end{lstlisting}
 
 This program will output \pigOut{Well, I'm not sure what your name is} because both conditionals, \pigVar{name == ``john''} and \pigVar{name == ``barbara''}, evaluate to false causing the if statement to continue on its merry way.
+
+\subsection{Switch Statements}
+A Switch statement is similar to a grouping of If, Else If and Else statements but where the conditional is always a direct comparison to a value.
+Switch statements are useful when you have a set number of values to compare a variable against.
+For example, the following If statements are a perfect candidate for a switch statement.
+
+\begin{lstlisting}[caption={Switch Statement Candidate}]
+name = ``brett''
+
+if name == ``john'':
+    print ``name is john''
+else if name == ``barbara'':
+    print ``name is barbara''
+else if name == ``eugene'':
+    print ``name is eugene''
+else if name == ``brett'':
+    print ``name is brett''
+else:
+    print ``not sure what your name is''
+\end{lstlisting}
+
+With a Switch statement it can be rewritten as.
+
+\begin{lstlisting}[caption={Switch Statement Example}]
+name = ``brett''
+
+switch name:
+    case ``john'':
+        print ``name is john''
+        break
+    case ``barbara'':
+        print ``name is barbara''
+        break
+    case ``eugene'':
+        print ``name is eugene''
+        break
+    case ``brett'':
+        print ``name is brett''
+        break
+    default:
+        print ``not sure what your name is''
+        break
+\end{lstlisting}
+
+Both of these programs work in a similar manner, take a variable and do a direct comparison to a set of values until a match is made or else use a default action.
+As well they will both output the same \pigOut{name is brett}.
+Think of a Switch statement as a set of If, Else If, Else statements where the conditionals are always a single \pigVar{==}.
+\par
+
+A switch statement introduces a few new keywords, the switch followed by the variable name we wish to compare against.
+Then we can have as many case statements following, each with the value that we wish to compare our variable against.
+The only other weird part is that we are also introducing the break statement, which is required to terminate each case statement code block.
+What the break statement says to do is ``break'' away from the entire switch statement.
+As an excersise, try removing all of the break statements from the above example and run it again, what changed?
+\par
+
+We have mainly been comparing string variables against string values but you can also use Switch statements to compare numbers as well.
+
+\begin{lstlisting}[caption={Switch Statement Numbers Example}]
+age = 22
+
+switch age:
+    case 20:
+        print ``not old enough to drink''
+        break
+    case 21:
+        print ``congratulations, do not over do it''
+        break
+    case 22:
+        print ``you`ve been doing this awhile''
+        break
+\end{lstlisting}
+
+As you can see, we can also compare our number variable against number values.
+In this example we also have left out the default case, this case is optional, similar to the else statement.
 
 \subsection{For Loops}
 
@@ -103,10 +177,8 @@ This program will output \pigOut{Well, I'm not sure what your name is} because b
 
 \subsection{Do-While Loops}
 
-\subsection{Switch Stataments}
+\subsection{Break Statements}
 
-\subsection{Break Statments}
-
-\subsection{Continue Stataments}
+\subsection{Continue Statements}
 
 \subsection{Conclusion}
