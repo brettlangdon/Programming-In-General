@@ -173,7 +173,7 @@ In this example we also have left out the default case, this case is optional, s
 
 \subsection{For Loops}
 We have seen some statements that will help the direction of our code, but what about repeating code?
-Lets say that we need to manually determine what the square of a number is using multiplication (rather than the exponential operator \^).
+Lets say that we need to manually determine what the square of a number is using multiplication (rather than the exponential operator \verb|^|).
 This can be expressed fairly easily.
 
 \begin{lstlisting}[caption={Square Without Loop}]
@@ -251,7 +251,89 @@ The same would be true if we changed the Condition to \pigVar{true} or \pigVar{1
 
 \subsection{While Loops}
 
+So we have just seen how For loops are used to loop based on a condition and a counter for a set interval, but what if we wanted to just loop forever until a condition was met?
+Well, we have While loops!
+While loops are great for things such as iterating over a file or a result set from a database query or when the duration of loop is unknown.
+\par
+
+While loops contain two parts, the conditional and the code block.
+The conditional is checked for each iteration of the loop, if it evaluates to \pigVal{true} then the code block is executed.
+The main difference between a While loop and a For loop is that a For loop is usually designed so that it runs at least once or for a set number of times,
+but a While loop has the potential to run the code block 0 times.
+Let us jump into an example.
+
+\begin{lstlisting}[caption={While Loop}]
+num = 0
+
+while num < 25:
+    print ``Loop''
+    num += 5
+\end{lstlisting}
+
+This program will print \pigOut{Loop} 5 times.
+When the program gets to the While loop it first evaluates the conditional to see if the code block should be run once.
+In this case \pigVar{num} is less than \pigVal{25} so the code block is executed, which prints \pigOut{Loop} and then increments \pigVar{num} by \pigVal{5}.
+This loop continues until \pigVar{num} is incremented to \pigVal{25}.
+\par
+
+This example is fairly simple and even in some resembles how a For loop works.
+I contains an initialization of a counter variable, \pigVar{num} to \pigVal{0}.
+The conditional ensures that \pigVar{num} is below \pigVal{25}.
+Finally the update is when we increment \pigVar{num} by \pigVal{5}.
+So let us take a look at an example that does not use numbers to see how the While loop can be useful.
+
+\begin{lstlisting}[caption={While Loop Over File}]
+file = OpenFile(``example.txt'')
+line = ReadLineFromFile(file)
+
+while line != EndOfFile:
+    print line
+    line = ReadLineFromFile(file)
+
+CloseFile(file)
+\end{lstlisting}
+
+As you can guess from this program, a file \pigVal{example.txt} is opened and the first line is read into the variable \pigVar{line}.
+When the While loop is reached the conditional checks to see if the end of the file has been reached.
+It is possible for this conditional to evaluate to \pigVal{false} the first check (if the file is empty).
+For each iteration of the loop the line read is printed out.
+Lastly another line is read from \pigVar{file} into \pigVar{line}; without line 6 {pigVar{line = ReadLineFromFile(file)} then the loop would continue forever as \pigVar{line} would
+not update and the conditional will always evaluate to the \pigVal{true}.
+\par
+
+Although the above example uses some concepts you might not be familiar with (functions and file input/output), it should illustrate the usefulness of the While loop and
+how it can differ from a For loop.
+
 \subsection{Do-While Loops}
+
+A Do-While loop is very similar to a While loop except in a single regard; the code block is guaranteed to run at least once.
+So as we are familiar with While loops lets jump right into an example.
+
+\begin{lstlisting}[caption={Do-While Loop}]
+num = 0
+
+do:
+    print ``Loop''
+    num += 5
+while num < 25
+\end{lstlisting}
+
+This example is just like the first While loop example we looked at and will run exactly the same number of times.
+The only difference is that the \pigOut{Loop} is printed and \pigVar{num} is incremented by \pigVal{5} before the conditional is checked for the first time.
+Now let us take a look at an example where the Do-While loop is useful.
+
+\begin{lstlisting}[caption={Another Do-While Loop}]
+num = 0
+
+do:
+    print ``Loop''
+    num += 5
+while num > 10
+\end{lstlisting}
+
+This program will output \pigOut{Loop} only once.
+The code block is executed before the conditional is checked for \pigOut{Loop} is printed then \pigVar{num} is incremented to \pigVal{5}.
+Finally the conditional is checked but since \pigVar{num} is less than \pigVal{10} it evaluates to \pigVal{false} and Do-While loop stops.
 
 \subsection{Break Statements}
 
