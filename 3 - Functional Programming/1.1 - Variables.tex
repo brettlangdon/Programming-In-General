@@ -145,6 +145,46 @@ For example, in the above ``Logical AND'' example, if \pigVar{name} were not equ
 For the second example using the Logical OR, if \pigVar{name == ``Brett''} were true (which in this case it was) then the right hand side would never get to evaluate.
 This is becuase with Logical OR's only one side needs to be true, if the left hand side is true then there is no need to even try the right hand side.
 
+\subsection{Increment/Decrement Operators}
+
+Most programming languages give us a few operators to use to increment or decrement the value of number variables.
+There exists four operators for this purpose, increment by \pigVal(1) (++), decrement by \pigVal(1) ($-$$ -$), increment by (+=) and decrement by ($-$=).
+
+\begin{lstlisting}[caption={Increment Operators}]
+num = 5
+++num
+num += 10
+
+print num
+\end{lstlisting}
+
+The output of this code will be \pigOut{16}.
+The first line sets \pigVar{num} to \pigVal{5}.
+The second then increments \pigVar{num} to \pigVal{6}.
+The third line then increments \pigVar{num} by \pigVal{10}.
+Lastly we print the value of \pigVar{num} which at this point is \pigVal{16}.
+
+\begin{lstlisting}[caption={Decrement Operators}]
+num = 16
+num--
+num -= 10
+
+print num
+\end{lstlisting}
+
+This program does the complete opposite of the one above.
+It starts with \pigVar{num} at \pigVal{16} and then decrements it to \pigVal{15} and finally to \pigVal{5}.
+There is one main difference in this program; the decrement operator ($-$$-$) is placed to the right of \pigVar{num} where with the increment operator (++) above
+is appears to the left of \pigVar{num}.
+These operators can be placed on either side of the variables you wish to effect.
+\par
+
+When the operator is in front of the variable it is called pre-increment or pre-decrement and the latter is post-increment and post-decrement.
+This pre/post choice does not apply to the increment by (+=) and decrement by ($-$=) operators; they must be placed to the right of the variables you wish to effect.
+It is worth while to investigate how your language of choice handles pre/post operators as you may not get the desired result.
+For the remainder of this resource only the pre operators will be used.
+
+
 \subsection{Conclusion}
 In this section we have covered the basics of variables, how they are declared, used and evaluated.
 Variables will be the building blocks from which we will continue through this book.
