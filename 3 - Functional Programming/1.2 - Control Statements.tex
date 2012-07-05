@@ -336,7 +336,47 @@ The code block is executed before the conditional is checked for \pigOut{Loop} i
 Finally the conditional is checked but since \pigVar{num} is less than \pigVal{10} it evaluates to \pigVal{false} and Do-While loop stops.
 
 \subsection{Break Statements}
+We have seen a sample of Break statements already in Switch statements.
+They are used to break away from control statements and are used mainly in loops.
+If you are looping through and come across condition where the loop needs to stop then a break statement can be used to end the loop and continue the 
+program after the loop.
+Lets look at an example.
+
+\begin{lstlisting}[caption={Break Statement}]
+print ``Loop Started''
+
+for i = 0; i < 1000; ++i:
+    if i > 20:
+        break;
+    print i
+
+print ``Loop Finished''
+\end{lstlisting}
+
+What will the output of this code be?
+It will first output \pigOut{Loop Started} followed by a listing of 0 through 20 followed by \pigOut{Loop Finished}.
+\par
+
+As we have seen before Break statements are also used in Switch statements.
+If you take a look at their purpose in loops you can see how they are useful in Switch statements as well.
+When a Switch statement reached a matching case a block of code is executed followed by a Break statement telling the Switch statement to
+stop matching cases and continue with the program.
 
 \subsection{Continue Statements}
+Continue statements are used in a similar fashion to Break statements but with a different consequence.
+Where Break statements stop a loops execution a Continue statement tells it to skip the remaining of the code block.
+Lets jump into it.
+
+\begin{lstlisting}[caption={Continue Statement}]
+print ``Loop Started''
+for i = 0; i < 1000; ++i:
+    if i > 20 && i < 980:
+        continue
+    print i
+print ``Loop Ended''
+\end{lstlisting}
+
+This program will output \pigOut{Loop Started} followed by a listing of 0 through 20 then 980 through 999 and lastly \pigOut{Loop Ended}.
+So as you can see unlike a Break statement which stops a loop in its tracks a Continue statement just says stop processing this iteration of the loop and continue to the next.
 
 \subsection{Conclusion}
