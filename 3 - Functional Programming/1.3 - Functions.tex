@@ -1,5 +1,32 @@
-
 \subsection{Declaration}
+What is a Function?
+We have been learning Functional programming, how come we haven't come across Functions until now?
+Because I said so.
+\par
+
+A Function allows use to assign a block of code to a name which allows us to eaily repeat the execution of that code without having
+to retype the code.
+Consider the code.
+
+\begin{lstlisting}[caption={Function Candidate Example}]
+def PrintHello():
+    print ``Hello''
+
+PrintHello()
+print ``Goodbye''
+PrintHello()
+Print ``I said Goodbye!''
+\end{lstlisting}
+
+This code will output the following:\\
+\pigOut{Hello\\
+Goodbye\\
+Hello\\
+I said Goodbye!}\\
+As you can see we are declaring a Function called \pigVar{PrintHello} with the code block \pigVar{print ``Hello''}.
+As may have noticed when the code gets to the declaration of the Function it does not execute the code block, instead it
+saves the code block for execution later when the Function name is called.
+To call the function we use the Function name followed by opening and closing parentheses, \pigVar{PrintHello()}.
 
 \subsection{Returns}
 
