@@ -6,9 +6,9 @@ Because I said so.
 
 A Function allows use to assign a block of code to a name which allows us to eaily repeat the execution of that code without having
 to retype the code.
-Consider the code.
+Let us take a look at a quick example.
 
-\begin{lstlisting}[caption={Function Candidate Example}]
+\begin{lstlisting}[caption={Simply Function Example}]
 def PrintHello():
     print ``Hello''
 
@@ -27,9 +27,181 @@ As you can see we are declaring a Function called \pigVar{PrintHello} with the c
 As may have noticed when the code gets to the declaration of the Function it does not execute the code block, instead it
 saves the code block for execution later when the Function name is called.
 To call the function we use the Function name followed by opening and closing parentheses, \pigVar{PrintHello()}.
+\par
 
-\subsection{Returns}
+Be careful, some languages require that Function definitions occur before they are used, while others are more lenient.
+
+\subsection{Scope}
+Before getting much further it is important to talk about Scope.
+Scope refers to the portions of a programs where variables are accessible.
+So far all of the variables we have been using in past examples belong to the same Scope.
+\par
+
+To best explain variable Scope lets look at some examples that explain how Scope works.
+
+\begin{lstlisting}[caption={Scope Example 1}]
+num = 5
+
+if num == 5:
+    print num
+\end{lstlisting}
+
+Because we are declaring \pigVar{num} outside of the If statement then that means we can have access to that variable from
+within the If statement because they belong to the same Scope.
+
+\begin{lstlisting}[caption={Scope Example 2}]
+num = 5
+
+if num == 5:
+    another = num + 5
+
+print another
+\end{lstlisting}
+
+This program will not run properly, because we are declaring \pigVar{another} from within the Scope of the If statement
+then it is not accessible outside of the If statement.
+This also goes for any other Conditional or Loop statement (While,For,If-Else,Do-While,Switch,etc).
+When it comes to Conditional and Loop statements the best way to think about it is that variables can go down into
+code blocks but cannot come back out.
+\par
+
+\begin{lstlisting}[caption={Scope Example 3}]
+name = ``Brett''
+
+def PrintHello():
+    print ``Hello `` + name
+
+PrintHello()
+\end{lstlisting}
+
+This program will not run properly, unlike Conditional and Loop statements, variables cannot go into the Scope of Functions.
+As well, they cannot leave the Scope of Functions either, so any variables declared inside of the Function are stuck there.
+\par
+
+Please remember, as with every other section, please refer to your languages specific rules regarding Scope as some languages break
+this ``normal'' paradigm.
+Scope in Javascript is odd to new comers.
 
 \subsection{Parameters}
+We can use parameters to pass variables from outside the Scope of the Function into the Scope of the Function.
+Lets rewrite the example (Scope Example 3) from above but this time taking into account variable Scope and using Parameters.
+
+\begin{lstlisting}[caption={PrintHello Parameter Example}]
+def PrintHello( name ):
+    print ``Hello `` + name
+
+MyName = ``Brett''
+
+PrintHello( MyName )
+\end{lstlisting}
+
+The output of this program will be \pigOut{Hello Brett}.
+By adding the \pigVar{name} Parameter to the \pigVar{PrintHello} Function definition we are able to then pass in the
+variable \pigVar{MyName} from outside of the Function Scope into the Function Scope.
+\par
+
+To define Parameters of a Function, you simple give a list of Parameter names between the two parenthesis separated by commas.
+When you define a Parameter for a Function you are requiring whoever uses that Function in the future of the program that they
+must supply that many Parameters.
+Let us take a look at an example Function that uses multiple Parameters.
+
+\begin{lstlisting}[caption={Multiple Parameters Example}]
+def Sum( x, y ):
+    sum = x + y
+    print ``The Sum Is: `` + sum
+
+Sum( 5, 6 )
+Sum( 12 )
+\end{lstlisting}
+
+We are simply defining a Function that is used to sum the values of two numbers together and then printing \pigOut{The Sum Is:} followed by
+the sum of the numbers.
+By defining two Parameters \pigVar{x} and \pigVar{y} we are telling any users of the Function that they must supply two values into the Function.
+The first example usage of \pigVar{Sum}, \pigVar{Sum( 5, 6 )} correctly calls the Function and will cause the program to output \pigOut{The Sum Is: 11}.
+The Second example \pigVar{Sum( 12 )} will cause the program to fail because only one Parameter is given when two were defined.
+\par
+
+When a Function is called and Parameters are given, the values passed into the Function are assigned to variables, inside of the Functions Scope, with the 
+same name given in the Function definition.
+In our example above the value \pigVal{5} is passed into the Function and assigned to the variable \pigVar{x} because both are the first value and first 
+Parameter.
+\pigVal{6} is then assigned to \pigVar{y}.
+
+\subsection{Returns}
+We have just seen how we can use Parameters to pass values into Functions, but what if we want to pass values back out of Functions?
+We would use a Return statement.
+When using a Return statement you use \pigVar{return} followed by the values or variable you wish to return out of the Function.
+
+\begin{lstlisting}[caption={Return Example}]
+def Sum( x, y )
+    sum = x + y
+    return sum
+
+MySum = Sum( 5, 6 )
+print ``The Sum Is: `` + MySum
+\end{lstlisting}
+
+This program will output \pigOut{The Sum Is: 11}.
+The Function is the same as before but this time we are using \pigVar{return} to push the value assigned to \pigVar{sum} back out of the Function.
+We can then assigned the output of the Function \pigVar{Sum} to a variable \pigVar{MySum} which will be equal to whatever the value that is returned is,
+in this case \pigVal{11}.
+When using Return statements in Functions you can then think about using Functions in the same way as you would a raw value (like a number).
+\par
+
+When the Return statement is reached the Function stops executing and the value of the Return statement is returned.
+So we can use Return statements similar in fashion to how Break statements are used to quickly stop the execution of a Function.
+
+\begin{lstlisting}[caption={Return to Stop Function}]
+def PrintHello( name ):
+    if name == ``Brett'':
+        return
+    print ``Hello `` + name
+
+PrintHello( ``Brett'' )
+PrintHello( ``James'' )
+\end{lstlisting}
+
+This example program will only output \pigOut{Hello James}, because when the value \pigVal{Brett} is passed into the Function
+the If statement evaluates to \pigVal{True} and the Return statement causes the Function to exit and the \pigVar{print} statement is
+never reached.
+\par
+
+A Function can also contain multiple Return statements.
+
+\begin{lstlisting}[caption={Multiple Return Statements}]
+def SayHello( time ):
+    if time < 12:
+        return ``Good Morning''
+    else:
+        return ``Good Afternoon''
+
+print SayHello( 10 )
+print SayHello( 3 )
+\end{lstlisting}
+
+The output of this program will be \pigOut{Good Morning} followed by \pigOut{Good Afternoon}.
+If the value passed into \pigVar{time} is less than \pigVal{12} then \pigVal{Good Morning} is returned, otherwise \pigVal{Good Afternoon}
+is returned.
+\par
+
+Side Note: I do have to mention, some people will argue with the example above and say Functions should only have a single Return statement.
+For those that agree or who wish to follow this mentality I have provided the example below to show the same example above with a single Return
+statement.
+
+\begin{lstlisting}[caption={Single Return Statement}]
+def SayHello( time ):
+    ReturnString = null
+    if time < 12:
+        ReturnString = ``Good Morning''
+    else:
+        ReturnString = ``Good Afternoon''
+    return ReturnString
+
+print SayHello( 10 )
+print SayHello( 3 )
+\end{lstlisting}
+
+This example will output the exact same as above but it only uses a single Return statement.
 
 \subsection{Recursion}
+
