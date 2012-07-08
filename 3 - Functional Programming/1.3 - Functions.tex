@@ -204,4 +204,35 @@ print SayHello( 3 )
 This example will output the exact same as above but it only uses a single Return statement.
 
 \subsection{Recursion}
+Recursion, now this section is going to be FUN!
+Please take your time reading through this chapter as it is very easy to get confused by Recursive Functions and can be difficult to wrap
+your head around the first time through (I know I had issues when I first learned it).
+Basically what it means for a Function to be recursive is when it makes a call to itself from within it's own code block.
+The example we are going to be using is a recursive Function used calculate the factorial of a number.
+The factorial of the number 6, denoted 6!, is 6 x 5 x 4 x 3 x 2 x 1 = 720.
+Lets look at how this would look as a recursive Function.
 
+\begin{lstlisting}[caption={Recursive Factorial}]
+def Factorial( num ):
+    if num < 1:
+        return 1
+    else:
+        return num * Factorial( num - 1 )
+
+print ``6! = `` + Factorial( 6 )
+\end{lstlisting}
+
+There are a few parts of a Recursive Function that we need to mention before diving deeping.
+First off we have the actual Recursive call which is when the Function calls it's, in this Function it is
+the code \pigVar{Factorial ( num - 1 )}.
+Secondly, and probably the most important part, is the Base Case:\\
+\pigVar{if num < 1:
+    return 1}\\
+The base case tells the Function when to stop calling itself recursively, otherwise the Function will call itself
+infinitely and cause an infinite loop and could crash the program.
+\par
+
+It might not be clear to some exactly how this Function is working, how is it getting the right value back out into
+the program?
+Well, lets do what we can to break down the Function call \pigVar{Factorial( 6 )} down to see exactly how the program
+interprets this Function.
